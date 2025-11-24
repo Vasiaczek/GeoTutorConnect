@@ -31,10 +31,10 @@ export default function ConsultationSection() {
           </div>
 
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            <h2 className="text-4xl md:text-5xl mb-6 text-white">
               Start with a Free Consultation
             </h2>
-            <p className="text-lg leading-relaxed mb-6 text-white/80">
+            <p className="text-lg leading-relaxed mb-6" style={{ color: '#e0e0db' }}>
               Not sure where to begin? Book a complimentary 30-minute consultation to discuss your learning goals and how I can help you succeed.
             </p>
 
@@ -55,7 +55,8 @@ export default function ConsultationSection() {
 
             <Button
               size="lg"
-              className="px-8 py-6 text-base md:text-lg font-semibold"
+              className="px-8 py-6 text-base md:text-lg border-0"
+              style={{ backgroundColor: '#e0e0db', color: '#253551' }}
               onClick={scrollToContact}
               data-testid="button-book-consultation"
             >

@@ -26,7 +26,7 @@ export default function ServicesSection() {
   return (
     <section id="services" className="h-screen flex items-center" style={{ backgroundColor: '#e0e0db' }}>
       <div className="max-w-7xl mx-auto px-6 w-full">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16" style={{ color: '#253551' }}>
+        <h2 className="text-4xl md:text-5xl text-center mb-16" style={{ color: '#253551' }}>
           My Services
         </h2>
 
@@ -43,15 +43,15 @@ export default function ServicesSection() {
                   <div className="w-12 h-12 rounded-md flex items-center justify-center mb-4" style={{ backgroundColor: 'rgba(37, 53, 81, 0.1)' }}>
                     <Icon className="h-6 w-6" style={{ color: '#253551' }} />
                   </div>
-                  <CardTitle className="text-2xl md:text-3xl font-semibold" style={{ color: '#253551' }}>
+                  <CardTitle className="text-2xl md:text-3xl" style={{ color: '#253551' }}>
                     {service.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <p className="text-base leading-relaxed" style={{ color: '#253551', opacity: 0.8 }}>
+                  <p className="text-base leading-relaxed" style={{ color: '#253551' }}>
                     {service.description}
                   </p>
-                  <p className="text-sm font-medium" style={{ color: '#253551' }}>
+                  <p className="text-sm" style={{ color: '#253551' }}>
                     {service.details}
                   </p>
                 </CardContent>
