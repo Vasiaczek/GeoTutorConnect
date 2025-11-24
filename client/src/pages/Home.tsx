@@ -16,8 +16,8 @@ export default function Home() {
         <AboutSection />
         <ContactSection />
       </main>
-      <footer className="bg-muted/30 border-t py-8">
-        <div className="max-w-7xl mx-auto px-6 text-center text-sm text-muted-foreground">
+      <footer className="border-t py-8" style={{ backgroundColor: '#e0e0db' }}>
+        <div className="max-w-7xl mx-auto px-6 text-center text-sm" style={{ color: '#253551', opacity: 0.8 }}>
           <p>&copy; {new Date().getFullYear()} GeoTutor. All rights reserved.</p>
         </div>
       </footer>

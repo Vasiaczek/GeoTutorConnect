@@ -10,17 +10,17 @@ const credentials = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-16 md:py-24 lg:py-32">
+    <section id="about" className="py-16 md:py-24 lg:py-32" style={{ backgroundColor: '#e0e0db' }}>
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-12">
           <Avatar className="w-32 h-32 mx-auto mb-6">
             <AvatarImage src={aboutImage} alt="Professional geography tutor" />
             <AvatarFallback>GT</AvatarFallback>
           </Avatar>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">About Me</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#253551' }}>About Me</h2>
         </div>
 
-        <div className="space-y-6 text-lg leading-relaxed text-muted-foreground mb-8">
+        <div className="space-y-6 text-lg leading-relaxed mb-8" style={{ color: '#253551', opacity: 0.8 }}>
           <p>
             Hello! I'm a passionate geography educator dedicated to making the world come alive for my students. With over eight years of teaching experience, I've helped hundreds of students not only improve their grades but develop a genuine love for understanding our planet.
           </p>
@@ -38,13 +38,13 @@ export default function AboutSection() {
             return (
               <div
                 key={index}
-                className="flex flex-col items-center text-center p-4 rounded-md bg-muted/30"
+                className="flex flex-col items-center text-center p-4 rounded-md bg-white"
                 data-testid={`credential-${index}`}
               >
-                <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center mb-3">
-                  <Icon className="h-5 w-5 text-primary" />
+                <div className="w-10 h-10 rounded-md flex items-center justify-center mb-3" style={{ backgroundColor: 'rgba(37, 53, 81, 0.1)' }}>
+                  <Icon className="h-5 w-5" style={{ color: '#253551' }} />
                 </div>
-                <p className="text-sm font-medium">{credential.text}</p>
+                <p className="text-sm font-medium" style={{ color: '#253551' }}>{credential.text}</p>
               </div>
             );
           })}

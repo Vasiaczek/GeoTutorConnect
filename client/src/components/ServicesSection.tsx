@@ -24,9 +24,9 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-16 md:py-24 lg:py-32 bg-muted/30">
+    <section id="services" className="py-16 md:py-24 lg:py-32" style={{ backgroundColor: '#e0e0db' }}>
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16" style={{ color: '#253551' }}>
           My Services
         </h2>
 
@@ -36,22 +36,22 @@ export default function ServicesSection() {
             return (
               <Card
                 key={index}
-                className="hover-elevate active-elevate-2 transition-transform duration-200 hover:scale-[1.02]"
+                className="hover-elevate active-elevate-2 transition-transform duration-200 hover:scale-[1.02] bg-white"
                 data-testid={`card-service-${index}`}
               >
                 <CardHeader>
-                  <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center mb-4">
-                    <Icon className="h-6 w-6 text-primary" />
+                  <div className="w-12 h-12 rounded-md flex items-center justify-center mb-4" style={{ backgroundColor: 'rgba(37, 53, 81, 0.1)' }}>
+                    <Icon className="h-6 w-6" style={{ color: '#253551' }} />
                   </div>
-                  <CardTitle className="text-2xl md:text-3xl font-semibold">
+                  <CardTitle className="text-2xl md:text-3xl font-semibold" style={{ color: '#253551' }}>
                     {service.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <p className="text-base leading-relaxed text-muted-foreground">
+                  <p className="text-base leading-relaxed" style={{ color: '#253551', opacity: 0.8 }}>
                     {service.description}
                   </p>
-                  <p className="text-sm font-medium text-primary">
+                  <p className="text-sm font-medium" style={{ color: '#253551' }}>
                     {service.details}
                   </p>
                 </CardContent>

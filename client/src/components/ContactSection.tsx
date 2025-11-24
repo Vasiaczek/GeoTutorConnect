@@ -42,21 +42,21 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24 lg:py-32 bg-muted/30">
+    <section id="contact" className="py-16 md:py-24 lg:py-32" style={{ backgroundColor: '#253551' }}>
       <div className="max-w-2xl mx-auto px-6">
         <div className="text-center mb-12">
-          <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center mx-auto mb-4">
-            <Mail className="h-6 w-6 text-primary" />
+          <div className="w-12 h-12 rounded-md flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'rgba(224, 224, 219, 0.2)' }}>
+            <Mail className="h-6 w-6 text-white" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h2>
-          <p className="text-lg text-muted-foreground">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Get In Touch</h2>
+          <p className="text-lg text-white/80">
             Have questions? Ready to start your geography learning journey? Send me a message!
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
-            <Label htmlFor="name">Full Name</Label>
+            <Label htmlFor="name" className="text-white">Full Name</Label>
             <Input
               id="name"
               name="name"
@@ -69,7 +69,7 @@ export default function ContactSection() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email" className="text-white">Email</Label>
             <Input
               id="email"
               name="email"
@@ -83,7 +83,7 @@ export default function ContactSection() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="subject">Subject (Optional)</Label>
+            <Label htmlFor="subject" className="text-white">Subject (Optional)</Label>
             <Input
               id="subject"
               name="subject"
@@ -95,7 +95,7 @@ export default function ContactSection() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="message">Message</Label>
+            <Label htmlFor="message" className="text-white">Message</Label>
             <Textarea
               id="message"
               name="message"

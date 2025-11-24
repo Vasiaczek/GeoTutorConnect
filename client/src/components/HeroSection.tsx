@@ -11,17 +11,17 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center py-16 md:py-24">
+    <section id="hero" className="min-h-screen flex items-center py-16 md:py-24" style={{ backgroundColor: '#253551' }}>
       <div className="max-w-7xl mx-auto px-6 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="max-w-xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-white">
               Master Geography with Expert Guidance
             </h1>
-            <p className="text-lg leading-relaxed mb-4 text-muted-foreground">
+            <p className="text-lg leading-relaxed mb-4 text-white/80">
               Transform your understanding of the world with personalized, one-on-one geography tutoring. Whether you're preparing for exams or exploring Earth's wonders, I'll help you achieve your goals.
             </p>
-            <p className="text-lg leading-relaxed mb-8 text-muted-foreground">
+            <p className="text-lg leading-relaxed mb-8 text-white/80">
               With years of experience and a passion for teaching, I make geography engaging, accessible, and memorable for students of all levels.
             </p>
             <Button
