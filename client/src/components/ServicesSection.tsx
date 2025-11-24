@@ -1,20 +1,24 @@
+import { useLocation } from "wouter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { GraduationCap, BookOpen, Target } from "lucide-react";
 
 const services = [
   {
+    id: "exam-preparation",
     icon: GraduationCap,
     title: "Exam Preparation",
     description: "Comprehensive exam preparation for GCSE, A-Level, and university geography courses. Structured revision plans, practice questions, and proven strategies to maximize your grades.",
     details: "Tailored support for all major exam boards"
   },
   {
+    id: "one-on-one",
     icon: BookOpen,
     title: "One-on-One Tutoring",
     description: "Personalized tutoring sessions designed around your learning style and pace. From physical geography to human geography, we cover all topics with clarity and depth.",
     details: "Flexible scheduling to fit your needs"
   },
   {
+    id: "skill-development",
     icon: Target,
     title: "Skill Development",
     description: "Build essential geography skills including map reading, data analysis, fieldwork techniques, and critical thinking. Perfect for students looking to excel beyond the curriculum.",
@@ -23,6 +27,12 @@ const services = [
 ];
 
 export default function ServicesSection() {
+  const [, setLocation] = useLocation();
+
+  const handleServiceClick = (serviceId: string) => {
+    setLocation(`/book?service=${serviceId}`);
+  };
+
   return (
     <section id="services" className="h-screen flex items-center" style={{ backgroundColor: '#e0e0db' }}>
       <div className="max-w-7xl mx-auto px-6 w-full">
@@ -36,7 +46,8 @@ export default function ServicesSection() {
             return (
               <Card
                 key={index}
-                className="hover-elevate active-elevate-2 transition-transform duration-200 hover:scale-[1.02] bg-white"
+                className="hover-elevate active-elevate-2 transition-transform duration-200 hover:scale-[1.02] bg-white cursor-pointer"
+                onClick={() => handleServiceClick(service.id)}
                 data-testid={`card-service-${index}`}
               >
                 <CardHeader>
