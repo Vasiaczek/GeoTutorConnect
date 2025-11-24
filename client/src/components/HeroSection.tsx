@@ -11,7 +11,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center py-16 md:py-24" style={{ backgroundColor: '#253551' }}>
+    <section id="hero" className="h-screen flex items-center" style={{ backgroundColor: '#253551' }}>
       <div className="max-w-7xl mx-auto px-6 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="max-w-xl">

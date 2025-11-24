@@ -18,8 +18,8 @@ export default function ConsultationSection() {
   };
 
   return (
-    <section id="consultation" className="py-16 md:py-24 lg:py-32" style={{ backgroundColor: '#253551' }}>
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="consultation" className="h-screen flex items-center" style={{ backgroundColor: '#253551' }}>
+      <div className="max-w-7xl mx-auto px-6 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <img

@@ -10,8 +10,8 @@ const credentials = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-16 md:py-24 lg:py-32" style={{ backgroundColor: '#e0e0db' }}>
-      <div className="max-w-4xl mx-auto px-6">
+    <section id="about" className="h-screen flex items-center" style={{ backgroundColor: '#e0e0db' }}>
+      <div className="max-w-4xl mx-auto px-6 w-full">
         <div className="text-center mb-12">
           <Avatar className="w-32 h-32 mx-auto mb-6">
             <AvatarImage src={aboutImage} alt="Professional geography tutor" />

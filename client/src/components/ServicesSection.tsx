@@ -24,8 +24,8 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-16 md:py-24 lg:py-32" style={{ backgroundColor: '#e0e0db' }}>
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="services" className="h-screen flex items-center" style={{ backgroundColor: '#e0e0db' }}>
+      <div className="max-w-7xl mx-auto px-6 w-full">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16" style={{ color: '#253551' }}>
           My Services
         </h2>

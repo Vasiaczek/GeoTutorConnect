@@ -14,7 +14,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b">
+    <nav className="bg-background border-b">
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <button

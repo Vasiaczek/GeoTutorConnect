@@ -42,82 +42,87 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24 lg:py-32" style={{ backgroundColor: '#253551' }}>
-      <div className="max-w-2xl mx-auto px-6">
-        <div className="text-center mb-12">
-          <div className="w-12 h-12 rounded-md flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'rgba(224, 224, 219, 0.2)' }}>
-            <Mail className="h-6 w-6 text-white" />
+    <section id="contact" className="h-screen flex items-center" style={{ backgroundColor: '#253551' }}>
+      <div className="max-w-7xl mx-auto px-6 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Contact Me</h2>
+            <p className="text-lg leading-relaxed text-white/80">
+              Have questions? Ready to start your geography learning journey? Send me a message and I'll get back to you within 24 hours.
+            </p>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Get In Touch</h2>
-          <p className="text-lg text-white/80">
-            Have questions? Ready to start your geography learning journey? Send me a message!
-          </p>
+
+          <div>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="space-y-2">
+                <Input
+                  id="name"
+                  name="name"
+                  placeholder="Full Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="rounded-lg border-0 text-base"
+                  style={{ backgroundColor: '#e0e0db', color: '#253551' }}
+                  data-testid="input-name"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="rounded-lg border-0 text-base"
+                  style={{ backgroundColor: '#e0e0db', color: '#253551' }}
+                  data-testid="input-email"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Input
+                  id="subject"
+                  name="subject"
+                  placeholder="Subject (Optional)"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className="rounded-lg border-0 text-base"
+                  style={{ backgroundColor: '#e0e0db', color: '#253551' }}
+                  data-testid="input-subject"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Textarea
+                  id="message"
+                  name="message"
+                  placeholder="Tell me about your learning goals or any questions you have..."
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={6}
+                  required
+                  className="rounded-lg border-0 text-base resize-none"
+                  style={{ backgroundColor: '#e0e0db', color: '#253551' }}
+                  data-testid="input-message"
+                />
+              </div>
+
+              <Button
+                type="submit"
+                size="lg"
+                className="w-full text-base md:text-lg font-semibold"
+                disabled={isSubmitting}
+                data-testid="button-submit"
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </Button>
+            </form>
+          </div>
         </div>
-
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="space-y-2">
-            <Label htmlFor="name" className="text-white">Full Name</Label>
-            <Input
-              id="name"
-              name="name"
-              placeholder="John Smith"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              data-testid="input-name"
-            />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="email" className="text-white">Email</Label>
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="john@example.com"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              data-testid="input-email"
-            />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="subject" className="text-white">Subject (Optional)</Label>
-            <Input
-              id="subject"
-              name="subject"
-              placeholder="Inquiry about tutoring services"
-              value={formData.subject}
-              onChange={handleChange}
-              data-testid="input-subject"
-            />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="message" className="text-white">Message</Label>
-            <Textarea
-              id="message"
-              name="message"
-              placeholder="Tell me about your learning goals or any questions you have..."
-              value={formData.message}
-              onChange={handleChange}
-              rows={6}
-              required
-              data-testid="input-message"
-            />
-          </div>
-
-          <Button
-            type="submit"
-            size="lg"
-            className="w-full text-base md:text-lg font-semibold"
-            disabled={isSubmitting}
-            data-testid="button-submit"
-          >
-            {isSubmitting ? "Sending..." : "Send Message"}
-          </Button>
-        </form>
       </div>
     </section>
   );
