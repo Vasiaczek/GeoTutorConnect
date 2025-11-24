@@ -1,44 +1,65 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Mail } from "lucide-react";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { insertContactSubmissionSchema } from "@shared/schema";
+import { z } from "zod";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "@/components/ui/form";
+
+type FormData = z.infer<typeof insertContactSubmissionSchema>;
 
 export default function ContactSection() {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: ""
+
+  const form = useForm<FormData>({
+    resolver: zodResolver(insertContactSubmissionSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+      service: undefined,
+    },
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    console.log("Contact form submitted:", formData);
-
-    setTimeout(() => {
+  const submitMutation = useMutation({
+    mutationFn: async (data: FormData) => {
+      const payload = {
+        ...data,
+        subject: data.subject?.trim() || undefined,
+        service: data.service?.trim() || undefined,
+      };
+      const res = await apiRequest("POST", "/api/contact", payload);
+      return await res.json();
+    },
+    onSuccess: () => {
       toast({
         title: "Message sent successfully!",
         description: "Thank you for reaching out. I'll get back to you within 24 hours.",
       });
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setIsSubmitting(false);
-    }, 1000);
-  };
+      form.reset();
+    },
+    onError: () => {
+      toast({
+        title: "Error sending message",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    },
+  });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
+  const onSubmit = (data: FormData) => {
+    submitMutation.mutate(data);
   };
 
   return (
@@ -53,75 +74,98 @@ export default function ContactSection() {
           </div>
 
           <div>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <Input
-                  id="name"
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                <FormField
+                  control={form.control}
                   name="name"
-                  placeholder="Full Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="rounded-lg border-0 text-base"
-                  style={{ backgroundColor: '#ffffff', color: '#253551' }}
-                  data-testid="input-name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input
+                          {...field}
+                          placeholder="Full Name"
+                          className="rounded-lg border-0 text-base"
+                          style={{ backgroundColor: '#ffffff', color: '#253551' }}
+                          data-testid="input-name"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
 
-              <div className="space-y-2">
-                <Input
-                  id="email"
+                <FormField
+                  control={form.control}
                   name="email"
-                  type="email"
-                  placeholder="Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="rounded-lg border-0 text-base"
-                  style={{ backgroundColor: '#ffffff', color: '#253551' }}
-                  data-testid="input-email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input
+                          {...field}
+                          type="email"
+                          placeholder="Email"
+                          className="rounded-lg border-0 text-base"
+                          style={{ backgroundColor: '#ffffff', color: '#253551' }}
+                          data-testid="input-email"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
 
-              <div className="space-y-2">
-                <Input
-                  id="subject"
+                <FormField
+                  control={form.control}
                   name="subject"
-                  placeholder="Subject (Optional)"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="rounded-lg border-0 text-base"
-                  style={{ backgroundColor: '#ffffff', color: '#253551' }}
-                  data-testid="input-subject"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input
+                          {...field}
+                          placeholder="Subject (Optional)"
+                          className="rounded-lg border-0 text-base"
+                          style={{ backgroundColor: '#ffffff', color: '#253551' }}
+                          data-testid="input-subject"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
 
-              <div className="space-y-2">
-                <Textarea
-                  id="message"
+                <FormField
+                  control={form.control}
                   name="message"
-                  placeholder="Tell me about your learning goals or any questions you have..."
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  required
-                  className="rounded-lg border-0 text-base resize-none"
-                  style={{ backgroundColor: '#ffffff', color: '#253551' }}
-                  data-testid="input-message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Textarea
+                          {...field}
+                          placeholder="Tell me about your learning goals or any questions you have..."
+                          rows={4}
+                          className="rounded-lg border-0 text-base resize-none"
+                          style={{ backgroundColor: '#ffffff', color: '#253551' }}
+                          data-testid="input-message"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
 
-              <Button
-                type="submit"
-                size="lg"
-                className="w-full text-base md:text-lg border-0"
-                style={{ backgroundColor: '#253551', color: '#e0e0db' }}
-                disabled={isSubmitting}
-                data-testid="button-submit"
-              >
-                {isSubmitting ? "Sending..." : "Send Message"}
-              </Button>
-            </form>
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full text-base md:text-lg border-0"
+                  style={{ backgroundColor: '#253551', color: '#e0e0db' }}
+                  disabled={submitMutation.isPending}
+                  data-testid="button-submit"
+                >
+                  {submitMutation.isPending ? "Sending..." : "Send Message"}
+                </Button>
+              </form>
+            </Form>
           </div>
         </div>
       </div>

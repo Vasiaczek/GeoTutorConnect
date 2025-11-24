@@ -1,20 +1,31 @@
-import { useState } from "react";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowLeft } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { insertContactSubmissionSchema } from "@shared/schema";
+import { z } from "zod";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 
 const SERVICES = {
   "exam-preparation": "Exam Preparation",
   "one-on-one": "One-on-One Tutoring",
   "skill-development": "Skill Development",
-  "general": "General Inquiry"
 };
+
+type FormData = z.infer<typeof insertContactSubmissionSchema>;
 
 export default function ServiceBooking() {
   const [, setLocation] = useLocation();
@@ -22,20 +33,28 @@ export default function ServiceBooking() {
   
   // Get service from URL query parameter
   const params = new URLSearchParams(window.location.search);
-  const serviceParam = params.get("service") || "general";
-  const serviceName = SERVICES[serviceParam as keyof typeof SERVICES] || SERVICES.general;
+  const serviceParam = params.get("service") || "exam-preparation";
+  const serviceName = SERVICES[serviceParam as keyof typeof SERVICES] || SERVICES["exam-preparation"];
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-    service: serviceName
+  const form = useForm<FormData>({
+    resolver: zodResolver(insertContactSubmissionSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+      service: serviceName,
+    },
   });
 
   const submitMutation = useMutation({
-    mutationFn: async (data: typeof formData) => {
-      const res = await apiRequest("POST", "/api/contact", data);
+    mutationFn: async (data: FormData) => {
+      const payload = {
+        ...data,
+        subject: data.subject?.trim() || undefined,
+        service: data.service?.trim() || undefined,
+      };
+      const res = await apiRequest("POST", "/api/contact", payload);
       return await res.json();
     },
     onSuccess: () => {
@@ -43,7 +62,13 @@ export default function ServiceBooking() {
         title: "Message sent successfully!",
         description: "Thank you for reaching out. I'll get back to you within 24 hours.",
       });
-      setFormData({ name: "", email: "", subject: "", message: "", service: serviceName });
+      form.reset({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+        service: serviceName,
+      });
     },
     onError: () => {
       toast({
@@ -54,18 +79,8 @@ export default function ServiceBooking() {
     },
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    submitMutation.mutate(formData);
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
+  const onSubmit = (data: FormData) => {
+    submitMutation.mutate(data);
   };
 
   return (
@@ -90,92 +105,122 @@ export default function ServiceBooking() {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="space-y-2">
-            <Label htmlFor="service" style={{ color: '#253551' }}>Service</Label>
-            <Input
-              id="service"
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <FormField
+              control={form.control}
               name="service"
-              value={formData.service}
-              readOnly
-              className="rounded-lg border-0 text-base bg-white"
-              style={{ color: '#253551' }}
-              data-testid="input-service"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel style={{ color: '#253551' }}>Service</FormLabel>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      readOnly
+                      className="rounded-lg border-0 text-base bg-white"
+                      style={{ color: '#253551' }}
+                      data-testid="input-service"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="name" style={{ color: '#253551' }}>Full Name</Label>
-            <Input
-              id="name"
+            <FormField
+              control={form.control}
               name="name"
-              placeholder="John Smith"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className="rounded-lg border-0 text-base bg-white"
-              style={{ color: '#253551' }}
-              data-testid="input-name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel style={{ color: '#253551' }}>Full Name</FormLabel>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      placeholder="John Smith"
+                      className="rounded-lg border-0 text-base bg-white"
+                      style={{ color: '#253551' }}
+                      data-testid="input-name"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="email" style={{ color: '#253551' }}>Email</Label>
-            <Input
-              id="email"
+            <FormField
+              control={form.control}
               name="email"
-              type="email"
-              placeholder="john@example.com"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="rounded-lg border-0 text-base bg-white"
-              style={{ color: '#253551' }}
-              data-testid="input-email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel style={{ color: '#253551' }}>Email</FormLabel>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      type="email"
+                      placeholder="john@example.com"
+                      className="rounded-lg border-0 text-base bg-white"
+                      style={{ color: '#253551' }}
+                      data-testid="input-email"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="subject" style={{ color: '#253551' }}>Subject (Optional)</Label>
-            <Input
-              id="subject"
+            <FormField
+              control={form.control}
               name="subject"
-              placeholder="What would you like to discuss?"
-              value={formData.subject}
-              onChange={handleChange}
-              className="rounded-lg border-0 text-base bg-white"
-              style={{ color: '#253551' }}
-              data-testid="input-subject"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel style={{ color: '#253551' }}>Subject (Optional)</FormLabel>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      placeholder="What would you like to discuss?"
+                      className="rounded-lg border-0 text-base bg-white"
+                      style={{ color: '#253551' }}
+                      data-testid="input-subject"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="message" style={{ color: '#253551' }}>Message</Label>
-            <Textarea
-              id="message"
+            <FormField
+              control={form.control}
               name="message"
-              placeholder="Tell me about your learning goals or any questions you have..."
-              value={formData.message}
-              onChange={handleChange}
-              rows={6}
-              required
-              className="rounded-lg border-0 text-base resize-none bg-white"
-              style={{ color: '#253551' }}
-              data-testid="input-message"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel style={{ color: '#253551' }}>Message</FormLabel>
+                  <FormControl>
+                    <Textarea
+                      {...field}
+                      placeholder="Tell me about your learning goals or any questions you have..."
+                      rows={6}
+                      className="rounded-lg border-0 text-base resize-none bg-white"
+                      style={{ color: '#253551' }}
+                      data-testid="input-message"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
 
-          <Button
-            type="submit"
-            size="lg"
-            className="w-full text-base md:text-lg border-0"
-            style={{ backgroundColor: '#253551', color: '#e0e0db' }}
-            disabled={submitMutation.isPending}
-            data-testid="button-submit"
-          >
-            {submitMutation.isPending ? "Sending..." : "Send Message"}
-          </Button>
-        </form>
+            <Button
+              type="submit"
+              size="lg"
+              className="w-full text-base md:text-lg border-0"
+              style={{ backgroundColor: '#253551', color: '#e0e0db' }}
+              disabled={submitMutation.isPending}
+              data-testid="button-submit"
+            >
+              {submitMutation.isPending ? "Sending..." : "Send Message"}
+            </Button>
+          </form>
+        </Form>
       </div>
     </div>
   );
