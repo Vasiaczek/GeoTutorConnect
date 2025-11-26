@@ -7,22 +7,22 @@ const services = [
     id: "exam-preparation",
     icon: GraduationCap,
     title: "Exam Preparation",
-    description: "Comprehensive exam preparation for GCSE, A-Level, and university geography courses. Structured revision plans, practice questions, and proven strategies to maximize your grades.",
-    details: "Tailored support for all major exam boards"
+    description: "Comprehensive exam preparation for IB, MYP, and university level courses. Guidance through solving past papers and essay-writing practice.",
+    details: "€25 per hour"
   },
   {
     id: "one-on-one",
     icon: BookOpen,
-    title: "One-on-One Tutoring",
-    description: "Personalized tutoring sessions designed around your learning style and pace. From physical geography to human geography, we cover all topics with clarity and depth.",
-    details: "Flexible scheduling to fit your needs"
+    title: "Help in writing the IA/EE",
+    description: "Guidance through every stage of your Geography IA or EE: topic selection, research design, data collection, analysis, and final write-up.",
+    details: "€25 per hour"
   },
   {
     id: "skill-development",
     icon: Target,
-    title: "Skill Development",
-    description: "Build essential geography skills including map reading, data analysis, fieldwork techniques, and critical thinking. Perfect for students looking to excel beyond the curriculum.",
-    details: "Interactive learning with real-world examples"
+    title: "Syllabus practice",
+    description: "Targeted practice that follows your syllabus, where I help you understand difficult concepts in simple, concise terms, utilizing modern, tangible examples.",
+    details: "€25 per hour"
   }
 ];
 

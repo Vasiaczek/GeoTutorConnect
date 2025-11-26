@@ -5,11 +5,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowLeft } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertContactSubmissionSchema } from "@shared/schema";
 import { z } from "zod";
+import { submitWeb3Form } from "@/lib/web3forms";
 import {
   Form,
   FormControl,
@@ -49,13 +49,13 @@ export default function ServiceBooking() {
 
   const submitMutation = useMutation({
     mutationFn: async (data: FormData) => {
-      const payload = {
-        ...data,
-        subject: data.subject?.trim() || undefined,
-        service: data.service?.trim() || undefined,
-      };
-      const res = await apiRequest("POST", "/api/contact", payload);
-      return await res.json();
+      return await submitWeb3Form({
+        name: data.name,
+        email: data.email,
+        subject: data.subject,
+        message: data.message,
+        service: data.service,
+      });
     },
     onSuccess: () => {
       toast({

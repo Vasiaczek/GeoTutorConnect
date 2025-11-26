@@ -18,7 +18,7 @@ export default function Home() {
       </main>
       <footer className="border-t py-8" style={{ backgroundColor: '#253551' }}>
         <div className="max-w-7xl mx-auto px-6 text-center text-sm" style={{ color: '#e0e0db' }}>
-          <p>&copy; {new Date().getFullYear()} GeoTutor. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Wasiak Tutoring. All rights reserved.</p>
         </div>
       </footer>
     </div>

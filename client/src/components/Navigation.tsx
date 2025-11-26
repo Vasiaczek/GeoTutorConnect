@@ -22,8 +22,14 @@ export default function Navigation() {
             className="flex items-center gap-2 hover-elevate active-elevate-2 rounded-md px-2 py-1 -ml-2"
             data-testid="link-home"
           >
-            <Globe className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold">GeoTutor</span>
+            <img
+  src="/logo_with_border.png"
+  alt="Logo"
+  width={40}
+  height={40}
+  className="h-8 w-auto"
+/>
+
           </button>
 
           <div className="hidden md:flex items-center gap-8">

@@ -1,11 +1,11 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Award, MapPin, Users } from "lucide-react";
-import aboutImage from "@assets/generated_images/geography_tutor_professional_headshot.png";
+import aboutImage from "@assets/generated_images/geography_tutor_professional_headshot.jpg";
 
 const credentials = [
-  { icon: Award, text: "Master's Degree in Geography" },
-  { icon: Users, text: "8+ Years Teaching Experience" },
-  { icon: MapPin, text: "Specialized in Physical & Human Geography" }
+  { icon: Award, text: "7/7 in Geography HL" },
+  { icon: Users, text: "Prepared 15 students for final exams" },
+  { icon: MapPin, text: "Specialized in Urban Geography" }
 ];
 
 export default function AboutSection() {
@@ -22,13 +22,13 @@ export default function AboutSection() {
 
         <div className="space-y-6 text-lg leading-relaxed mb-8" style={{ color: '#253551' }}>
           <p>
-            Hello! I'm a passionate geography educator dedicated to making the world come alive for my students. With over eight years of teaching experience, I've helped hundreds of students not only improve their grades but develop a genuine love for understanding our planet.
+            My name is Stanisław Wasiak and I'm a second year BSc Spatial Planning and Design student at the University of Groningen. I graduated the International Baccalaureate Programme at the Stefan Batory High School in Warsaw, Poland, with a score of 37/45. Of those points, I graduated with 7/7 in both Higher Level Geography and Standard Level AA Mathematics.
           </p>
           <p>
-            My approach combines rigorous academic preparation with engaging, real-world examples that make geography relevant and exciting. Whether you're struggling with tectonic plates or tackling urban development theories, I break down complex concepts into clear, manageable lessons.
+            I began tutoring in 2024, when I partnered up with a Dutch company offering tutoring services to students in the Netherlands. I decided to begin tutoring on my own when both my students and I realized that their needs are better met when I'm available to them at all times - something that previously wasn't possible. Since then, I've guided more than a dozen students through their finals, writing IAs, and Extended Essays.
           </p>
           <p>
-            I believe every student can excel in geography with the right guidance and support. My teaching philosophy centers on building confidence, encouraging curiosity, and fostering critical thinking skills that extend far beyond the classroom.
+            I helped students from The Netherlands, Spain, Sweden, Poland, and Switzerland in achieving their desired grades, with an average final score of 6.6/7. 
           </p>
         </div>
 

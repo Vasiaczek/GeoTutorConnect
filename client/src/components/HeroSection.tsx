@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import heroImage from "@assets/generated_images/geography_tutoring_hero_image.png";
+import heroImage from "@assets/generated_images/geography_tutoring_hero_image.jfif";
 
 export default function HeroSection() {
   const scrollToServices = () => {
@@ -16,13 +16,13 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="max-w-xl">
             <h1 className="text-5xl md:text-6xl lg:text-7xl leading-tight mb-6 text-white">
-              Master Geography with Expert Guidance
+              Master IB Geography with Expert Guidance
             </h1>
             <p className="text-lg leading-relaxed mb-4" style={{ color: '#e0e0db' }}>
-              Transform your understanding of the world with personalized, one-on-one geography tutoring. Whether you're preparing for exams or exploring Earth's wonders, I'll help you achieve your goals.
+              As an IB graduate, I understand the struggle with trying to score in the high markbands. Therefore, I decided to commit myself to helping students in understanding the system and achieving their academic goals.
             </p>
-            <p className="text-lg leading-relaxed mb-8" style={{ color: '#e0e0db' }}>
-              With years of experience and a passion for teaching, I make geography engaging, accessible, and memorable for students of all levels.
+            <p className="text-2xl md:text-3xl font-semibold mb-6" style={{ color: '#e0e0db' }}>
+              Without All Nighters
             </p>
             <Button
               size="lg"

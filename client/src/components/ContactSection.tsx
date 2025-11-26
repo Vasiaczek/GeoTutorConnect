@@ -3,11 +3,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertContactSubmissionSchema } from "@shared/schema";
 import { z } from "zod";
+import { submitWeb3Form } from "@/lib/web3forms";
 import {
   Form,
   FormControl,
@@ -34,13 +34,13 @@ export default function ContactSection() {
 
   const submitMutation = useMutation({
     mutationFn: async (data: FormData) => {
-      const payload = {
-        ...data,
-        subject: data.subject?.trim() || undefined,
-        service: data.service?.trim() || undefined,
-      };
-      const res = await apiRequest("POST", "/api/contact", payload);
-      return await res.json();
+      return await submitWeb3Form({
+        name: data.name,
+        email: data.email,
+        subject: data.subject,
+        message: data.message,
+        service: data.service,
+      });
     },
     onSuccess: () => {
       toast({
@@ -69,7 +69,7 @@ export default function ContactSection() {
           <div className="mt-16">
             <h2 className="text-4xl md:text-5xl mb-6" style={{ color: '#253551' }}>Contact Me</h2>
             <p className="text-lg leading-relaxed" style={{ color: '#253551', opacity: 0.8 }}>
-              Have questions? Ready to start your geography learning journey? Send me a message and I'll get back to you within 24 hours.
+              Have questions? Send me a message and I'll get back to you within 24 hours.
             </p>
           </div>
 
