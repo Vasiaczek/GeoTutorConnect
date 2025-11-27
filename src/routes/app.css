@@ -1,0 +1,65 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+	--font-sans: Marcellus, serif;
+	--font-serif: Georgia, serif;
+	--font-mono: Menlo, monospace;
+	--radius: 0.5rem;
+}
+
+/* LIGHT MODE */
+:root {
+	--button-outline: rgba(0, 0, 0, 0.1);
+	--badge-outline: rgba(0, 0, 0, 0.05);
+	--opaque-button-border-intensity: -8;
+	--elevate-1: rgba(0, 0, 0, 0.03);
+	--elevate-2: rgba(0, 0, 0, 0.08);
+	--background: 0 0% 100%;
+	--foreground: 0 0% 10%;
+	--border: 0 0% 91%;
+	--card: 0 0% 98%;
+	--card-foreground: 0 0% 10%;
+	--card-border: 0 0% 94%;
+	--primary: 142 70% 35%;
+	--primary-foreground: 142 70% 98%;
+	--secondary: 0 0% 90%;
+	--secondary-foreground: 0 0% 10%;
+	--muted: 142 6% 88%;
+	--muted-foreground: 142 6% 25%;
+	--accent: 142 8% 92%;
+	--accent-foreground: 142 8% 15%;
+	--destructive: 0 72% 38%;
+	--destructive-foreground: 0 72% 98%;
+	--input: 0 0% 75%;
+	--ring: 142 70% 45%;
+}
+
+body {
+	font-family: var(--font-sans);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Hover and active elevation utilities */
+.hover-elevate {
+	position: relative;
+	z-index: 0;
+}
+
+.hover-elevate::after {
+	content: '';
+	pointer-events: none;
+	position: absolute;
+	inset: 0px;
+	border-radius: inherit;
+	z-index: 999;
+}
+
+.hover-elevate:hover::after {
+	background-color: var(--elevate-1);
+}
+
+.active-elevate-2:active::after {
+	background-color: var(--elevate-2);
+}
