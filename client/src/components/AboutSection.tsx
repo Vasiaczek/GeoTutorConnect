@@ -3,7 +3,7 @@ import { Award, MapPin, Users } from "lucide-react";
 import aboutImage from "@assets/generated_images/geography_tutor_professional_headshot.jpg";
 
 const credentials = [
-  { icon: Award, text: "7/7 in Geography HL" },
+  { icon: Award, text: "7/7 in Geography HL and Math AA SL" },
   { icon: Users, text: "Prepared 15 students for final exams" },
   { icon: MapPin, text: "Specialized in Urban Geography" }
 ];
@@ -22,7 +22,7 @@ export default function AboutSection() {
 
         <div className="space-y-6 text-lg leading-relaxed mb-8" style={{ color: '#253551' }}>
           <p>
-            My name is Stanisław Wasiak and I'm a second year BSc Spatial Planning and Design student at the University of Groningen. I graduated the International Baccalaureate Programme at the Stefan Batory High School in Warsaw, Poland, with a score of 37/45. Of those points, I graduated with 7/7 in both Higher Level Geography and Standard Level AA Mathematics.
+            My name is Stanisław Wasiak and I'm a second year BSc Spatial Planning and Design, as well as a 1st year Applied Maths student at the University of Groningen. I graduated the International Baccalaureate Programme at the Stefan Batory High School in Warsaw, Poland, with a score of 37/45. Of those points, I graduated with 7/7 in both Higher Level Geography and Standard Level AA Mathematics.
           </p>
           <p>
             I began tutoring in 2024, when I partnered up with a Dutch company offering tutoring services to students in the Netherlands. I decided to begin tutoring on my own when both my students and I realized that their needs are better met when I'm available to them at all times - something that previously wasn't possible. Since then, I've guided more than a dozen students through their finals, writing IAs, and Extended Essays.

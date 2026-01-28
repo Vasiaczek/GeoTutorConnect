@@ -14,8 +14,8 @@ const services = [
     id: "one-on-one",
     icon: BookOpen,
     title: "Help in writing the IA/EE",
-    description: "Guidance through every stage of your Geography IA or EE: topic selection, research design, data collection, analysis, and final write-up.",
-    details: "€25 per hour"
+    description: "Guidance through every stage of your IA or EE: topic selection, research design, data collection, analysis, and final write-up.",
+    details: "€20 per hour"
   },
   {
     id: "skill-development",

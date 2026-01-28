@@ -16,7 +16,7 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="max-w-xl">
             <h1 className="text-5xl md:text-6xl lg:text-7xl leading-tight mb-6 text-white">
-              Master IB Geography with Expert Guidance
+              IB Geo and Math AA with Expert Guidance
             </h1>
             <p className="text-lg leading-relaxed mb-4" style={{ color: '#e0e0db' }}>
               As an IB graduate, I understand the struggle with trying to score in the high markbands. Therefore, I decided to commit myself to helping students in understanding the system and achieving their academic goals.
