@@ -10,7 +10,7 @@ const credentials = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="h-screen flex items-center" style={{ backgroundColor: '#e0e0db' }}>
+    <section id="about" className="min-h-screen flex items-center py-16 md:h-screen md:min-h-0 md:py-0" style={{ backgroundColor: '#e0e0db' }}>
       <div className="max-w-4xl mx-auto px-6 w-full">
         <div className="text-center mb-12">
           <Avatar className="w-32 h-32 mx-auto mb-6">
@@ -22,7 +22,7 @@ export default function AboutSection() {
 
         <div className="space-y-6 text-lg leading-relaxed mb-8" style={{ color: '#253551' }}>
           <p>
-            My name is Stanisław Wasiak and I'm a second year BSc Spatial Planning and Design, as well as a 1st year Applied Maths student at the University of Groningen. I graduated the International Baccalaureate Programme at the Stefan Batory High School in Warsaw, Poland, with a score of 37/45. Of those points, I graduated with 7/7 in both Higher Level Geography and Standard Level AA Mathematics.
+            My name is Stanisław Wasiak and I'm a third year BSc Spatial Planning and Design and first year Applied Mathematics student at the University of Groningen. I graduated the International Baccalaureate Programme at the Stefan Batory High School in Warsaw, Poland, with a score of 37/45. Of those points, I graduated with 7/7 in both Higher Level Geography and Standard Level AA Mathematics.
           </p>
           <p>
             I began tutoring in 2024, when I partnered up with a Dutch company offering tutoring services to students in the Netherlands. I decided to begin tutoring on my own when both my students and I realized that their needs are better met when I'm available to them at all times - something that previously wasn't possible. Since then, I've guided more than a dozen students through their finals, writing IAs, and Extended Essays.

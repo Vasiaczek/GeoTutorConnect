@@ -11,12 +11,12 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="hero" className="h-screen flex items-center" style={{ backgroundColor: '#253551' }}>
+    <section id="hero" className="min-h-screen flex items-center py-16 md:h-screen md:min-h-0 md:py-0" style={{ backgroundColor: '#253551' }}>
       <div className="max-w-7xl mx-auto px-6 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="max-w-xl">
             <h1 className="text-5xl md:text-6xl lg:text-7xl leading-tight mb-6 text-white">
-              IB Geo and Math AA with Expert Guidance
+              Master IB <span style={{ color: '#C93434' }}>Math</span> &amp; <span style={{ color: '#16AEDE' }}>Geography</span> with Expert Guidance
             </h1>
             <p className="text-lg leading-relaxed mb-4" style={{ color: '#e0e0db' }}>
               As an IB graduate, I understand the struggle with trying to score in the high markbands. Therefore, I decided to commit myself to helping students in understanding the system and achieving their academic goals.

@@ -63,7 +63,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="h-screen flex items-center" style={{ backgroundColor: '#e0e0db' }}>
+    <section id="contact" className="min-h-screen flex items-center py-16 md:h-screen md:min-h-0 md:py-0" style={{ backgroundColor: '#e0e0db' }}>
       <div className="max-w-7xl mx-auto px-6 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className="mt-16">

@@ -11,14 +11,14 @@ const services = [
     details: "€25 per hour"
   },
   {
-    id: "one-on-one",
+    id: "IA-EE-help",
     icon: BookOpen,
     title: "Help in writing the IA/EE",
     description: "Guidance through every stage of your IA or EE: topic selection, research design, data collection, analysis, and final write-up.",
     details: "€20 per hour"
   },
   {
-    id: "skill-development",
+    id: "Syllabus-practice",
     icon: Target,
     title: "Syllabus practice",
     description: "Targeted practice that follows your syllabus, where I help you understand difficult concepts in simple, concise terms, utilizing modern, tangible examples.",
@@ -34,7 +34,7 @@ export default function ServicesSection() {
   };
 
   return (
-    <section id="services" className="h-screen flex items-center" style={{ backgroundColor: '#e0e0db' }}>
+    <section id="services" className="min-h-screen flex items-center py-16 md:h-screen md:min-h-0 md:py-0" style={{ backgroundColor: '#e0e0db' }}>
       <div className="max-w-7xl mx-auto px-6 w-full">
         <h2 className="text-4xl md:text-5xl text-center mb-16" style={{ color: '#253551' }}>
           My Services
