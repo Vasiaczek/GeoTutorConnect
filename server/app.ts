@@ -87,7 +87,7 @@ export default async function runApp(
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
   const port = parseInt(process.env.PORT || '5000', 10);
-  const listenOptions: ListenOptions & { reusePort?: boolean } = {
+  const listenOptions: ListenOptions = {
     port,
     host: "0.0.0.0",
   };

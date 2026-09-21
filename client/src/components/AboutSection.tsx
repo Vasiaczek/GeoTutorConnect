@@ -10,7 +10,7 @@ const credentials = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="min-h-screen flex items-center py-16 md:h-screen md:min-h-0 md:py-0" style={{ backgroundColor: '#e0e0db' }}>
+    <section id="about" className="h-screen flex items-center" style={{ backgroundColor: '#e0e0db' }}>
       <div className="max-w-4xl mx-auto px-6 w-full">
         <div className="text-center mb-12">
           <Avatar className="w-32 h-32 mx-auto mb-6">
