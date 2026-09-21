@@ -78,7 +78,7 @@ export default function ConsultationSection() {
               Start with a Free Consultation
             </h2>
             <p className="text-lg leading-relaxed mb-6" style={{ color: '#e0e0db' }}>
-              Not sure where to begin? Book a complimentary 60-minute consultation to discuss your learning goals and how I can help you succeed.
+              Not sure where to begin? Book a complimentary 30-minute consultation to discuss your learning goals and how I can help you succeed.
             </p>
 
             <div className="space-y-3 mb-8">
