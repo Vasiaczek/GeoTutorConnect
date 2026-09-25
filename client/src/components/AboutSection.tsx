@@ -14,7 +14,7 @@ export default function AboutSection() {
       <div className="max-w-4xl mx-auto px-6 w-full">
         <div className="text-center mb-12">
           <Avatar className="w-32 h-32 mx-auto mb-6">
-            <AvatarImage src={aboutImage} alt="Professional geography tutor" />
+            <AvatarImage src={aboutImage} alt="Professional geography tutor" className="object-cover object-top" />
             <AvatarFallback>GT</AvatarFallback>
           </Avatar>
           <h2 className="text-4xl md:text-5xl mb-4" style={{ color: '#253551' }}>About Me</h2>
