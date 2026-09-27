@@ -34,13 +34,13 @@ export default function ServicesSection() {
   };
 
   return (
-    <section id="services" className="h-screen flex items-center" style={{ backgroundColor: '#e0e0db' }}>
+    <section id="services" className="min-h-screen flex items-center py-20" style={{ backgroundColor: '#e0e0db' }}>
       <div className="max-w-7xl mx-auto px-6 w-full">
-        <h2 className="text-4xl md:text-5xl text-center mb-16" style={{ color: '#253551' }}>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl text-center mb-10 md:mb-16" style={{ color: '#253551' }}>
           My Services
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
@@ -54,7 +54,7 @@ export default function ServicesSection() {
                   <div className="w-12 h-12 rounded-md flex items-center justify-center mb-4" style={{ backgroundColor: 'rgba(37, 53, 81, 0.1)' }}>
                     <Icon className="h-6 w-6" style={{ color: '#253551' }} />
                   </div>
-                  <CardTitle className="text-2xl md:text-3xl" style={{ color: '#253551' }}>
+                  <CardTitle className="text-xl md:text-2xl lg:text-3xl" style={{ color: '#253551' }}>
                     {service.title}
                   </CardTitle>
                 </CardHeader>

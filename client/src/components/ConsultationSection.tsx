@@ -35,10 +35,44 @@ export default function ConsultationSection() {
   };
 
   return (
-    <section id="consultation" className="h-screen flex items-center" style={{ backgroundColor: '#253551' }}>
+    <section id="consultation" className="min-h-screen flex items-center py-20" style={{ backgroundColor: '#253551' }}>
       <div className="max-w-7xl mx-auto px-6 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <div className="space-y-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
+          <div className="mt-0 lg:mt-4 order-1 lg:order-2">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl mb-6 text-white">
+              Start with a Free Consultation
+            </h2>
+            <p className="text-base lg:text-lg leading-relaxed mb-6" style={{ color: '#e0e0db' }}>
+              Not sure where to begin? Book a complimentary 30-minute consultation to discuss your learning goals and how I can help you succeed.
+            </p>
+
+            <div className="space-y-3 mb-8">
+              {benefits.map((benefit, index) => (
+                <div
+                  key={index}
+                  className="flex items-start gap-3"
+                  data-testid={`benefit-${index}`}
+                >
+                  <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: 'rgba(224, 224, 219, 0.2)' }}>
+                    <Check className="h-4 w-4 text-white" />
+                  </div>
+                  <p className="text-base leading-relaxed text-white">{benefit}</p>
+                </div>
+              ))}
+            </div>
+
+            <Button
+              size="lg"
+              className="px-8 py-6 text-base md:text-lg border-0"
+              style={{ backgroundColor: '#e0e0db', color: '#253551' }}
+              onClick={scrollToContact}
+              data-testid="button-book-consultation"
+            >
+              Book Your Free Consultation
+            </Button>
+          </div>
+
+          <div className="space-y-4 order-2 lg:order-1">
             {reviewPlaceholders.map((review, index) => (
               <div
                 key={index}
@@ -71,40 +105,6 @@ export default function ConsultationSection() {
                 </div>
               </div>
             ))}
-          </div>
-
-          <div className="mt-4 lg:mt-0">
-            <h2 className="text-4xl md:text-5xl mb-6 text-white">
-              Start with a Free Consultation
-            </h2>
-            <p className="text-lg leading-relaxed mb-6" style={{ color: '#e0e0db' }}>
-              Not sure where to begin? Book a complimentary 30-minute consultation to discuss your learning goals and how I can help you succeed.
-            </p>
-
-            <div className="space-y-3 mb-8">
-              {benefits.map((benefit, index) => (
-                <div
-                  key={index}
-                  className="flex items-start gap-3"
-                  data-testid={`benefit-${index}`}
-                >
-                  <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: 'rgba(224, 224, 219, 0.2)' }}>
-                    <Check className="h-4 w-4 text-white" />
-                  </div>
-                  <p className="text-base leading-relaxed text-white">{benefit}</p>
-                </div>
-              ))}
-            </div>
-
-            <Button
-              size="lg"
-              className="px-8 py-6 text-base md:text-lg border-0"
-              style={{ backgroundColor: '#e0e0db', color: '#253551' }}
-              onClick={scrollToContact}
-              data-testid="button-book-consultation"
-            >
-              Book Your Free Consultation
-            </Button>
           </div>
         </div>
       </div>

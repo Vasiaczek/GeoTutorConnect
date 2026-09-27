@@ -10,17 +10,17 @@ const credentials = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="h-screen flex items-center" style={{ backgroundColor: '#e0e0db' }}>
+    <section id="about" className="min-h-screen flex items-center py-20" style={{ backgroundColor: '#e0e0db' }}>
       <div className="max-w-4xl mx-auto px-6 w-full">
-        <div className="text-center mb-12">
-          <Avatar className="w-32 h-32 mx-auto mb-6">
+        <div className="text-center mb-8 md:mb-12">
+          <Avatar className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-6">
             <AvatarImage src={aboutImage} alt="Professional geography tutor" className="object-cover object-top" />
             <AvatarFallback>GT</AvatarFallback>
           </Avatar>
-          <h2 className="text-4xl md:text-5xl mb-4" style={{ color: '#253551' }}>About Me</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4" style={{ color: '#253551' }}>About Me</h2>
         </div>
 
-        <div className="space-y-6 text-lg leading-relaxed mb-8" style={{ color: '#253551' }}>
+        <div className="space-y-4 md:space-y-6 text-base md:text-lg leading-relaxed mb-8" style={{ color: '#253551' }}>
           <p>
             My name is Stanisław Wasiak and I'm a third year BSc Spatial Planning and Design and first year Applied Mathematics student at the University of Groningen. I graduated the International Baccalaureate Programme at the Stefan Batory High School in Warsaw, Poland, with a score of 37/45. Of those points, I graduated with 7/7 in both Higher Level Geography and Standard Level AA Mathematics.
           </p>
@@ -32,7 +32,7 @@ export default function AboutSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {credentials.map((credential, index) => {
             const Icon = credential.icon;
             return (

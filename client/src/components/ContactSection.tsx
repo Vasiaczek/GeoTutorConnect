@@ -63,12 +63,12 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="h-screen flex items-center" style={{ backgroundColor: '#c8cdd6' }}>
+    <section id="contact" className="min-h-screen flex items-center py-20" style={{ backgroundColor: '#c8cdd6' }}>
       <div className="max-w-7xl mx-auto px-6 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <div className="mt-16">
-            <h2 className="text-4xl md:text-5xl mb-6" style={{ color: '#253551' }}>Contact Me</h2>
-            <p className="text-lg leading-relaxed" style={{ color: '#253551', opacity: 0.8 }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+          <div className="lg:mt-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4 md:mb-6" style={{ color: '#253551' }}>Contact Me</h2>
+            <p className="text-base md:text-lg leading-relaxed" style={{ color: '#253551', opacity: 0.8 }}>
               Have questions? Send me a message and I'll get back to you within 24 hours.
             </p>
           </div>

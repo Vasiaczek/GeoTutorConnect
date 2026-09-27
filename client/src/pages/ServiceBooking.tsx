@@ -85,10 +85,10 @@ export default function ServiceBooking() {
 
   return (
     <div className="min-h-screen flex items-center" style={{ backgroundColor: '#e0e0db' }}>
-      <div className="max-w-3xl mx-auto px-6 py-16 w-full">
+      <div className="max-w-3xl mx-auto px-6 py-10 md:py-16 w-full">
         <Button
           variant="ghost"
-          className="mb-8 -ml-2"
+          className="mb-6 md:mb-8 -ml-2"
           onClick={() => setLocation("/")}
           data-testid="button-back"
         >
@@ -96,11 +96,11 @@ export default function ServiceBooking() {
           Back to Home
         </Button>
 
-        <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl mb-4" style={{ color: '#253551' }}>
+        <div className="mb-8 md:mb-12">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl mb-4" style={{ color: '#253551' }}>
             Book {serviceName}
           </h1>
-          <p className="text-lg" style={{ color: '#253551' }}>
+          <p className="text-base md:text-lg" style={{ color: '#253551' }}>
             Fill out the form below and I'll get back to you within 24 hours.
           </p>
         </div>
