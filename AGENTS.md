@@ -6,7 +6,7 @@ This file provides structured context for AI coding agents working on this repos
 
 ## Project Overview
 
-**GeoTutorConnect** is the codebase for **Wasiak Tutoring**, a professional website for Stanisław Wasiak — an IB Geography tutor. The site is a marketing + booking platform for IB students seeking Geography tutoring.
+**GeoTutorConnect** is the codebase for **Wasiak Tutoring**, a professional website for Stanisław Wasiak — an IB Mathematics AA SL tutor with Geography tutoring also available. The site is a marketing + booking platform for IB students seeking tutoring.
 
 - **Business context:** Solo tutoring service, 1 tutor, €25/hour, international student base (NL, ES, SE, PL, CH)
 - **Key user actions:** Browse services → book a consultation → submit a contact form
@@ -95,15 +95,15 @@ The site has **two contact form submission paths**:
 
 ## Services
 
-The three tutoring services are hardcoded in `ServicesSection.tsx`:
+The tutoring services are hardcoded in `ServicesSection.tsx`, with Math as the primary subject and Geography as a secondary option:
 
 | `service` ID | Display Name |
 |-------------|-------------|
-| `exam-preparation` | Exam Preparation |
-| `one-on-one` | One-on-One Tutoring / Help writing the IA/EE |
-| `skill-development` | Syllabus Practice |
+| `math-exam-preparation` | IB Math Exam Preparation |
+| `math-one-on-one` | One-on-One IB Math Support |
+| `geography-support` | Geography Tutoring |
 
-The `ServiceBooking.tsx` page maps these IDs to display names via the `SERVICES` object. If you add a service, update **both** `ServicesSection.tsx` and the `SERVICES` map in `ServiceBooking.tsx`.
+The `ServiceBooking.tsx` page maps these IDs to display names via the `SERVICES` object. If you add a service, update **both** `ServicesSection.tsx` and the `SERVICES` map in `ServiceBooking.tsx`. The booking page also retains aliases for the original Geography service IDs.
 
 ---
 

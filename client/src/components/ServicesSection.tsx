@@ -4,24 +4,24 @@ import { GraduationCap, BookOpen, Target } from "lucide-react";
 
 const services = [
   {
-    id: "exam-preparation",
+    id: "math-exam-preparation",
     icon: GraduationCap,
-    title: "Exam Preparation",
-    description: "Comprehensive exam preparation for IB, MYP, and university level courses. Guidance through solving past papers and essay-writing practice.",
+    title: "Mathematics Exam Preparation",
+    description: "Prepare for your mathematics exams with focused concept review, past-paper practice, and strategies tailored to your goals.",
     details: "€25 per hour"
   },
   {
-    id: "one-on-one",
+    id: "math-one-on-one",
     icon: BookOpen,
-    title: "Help in writing the IA/EE",
-    description: "Guidance through every stage of your Geography IA or EE: topic selection, research design, data collection, analysis, and final write-up.",
+    title: "One-on-One Mathematics Support",
+    description: "Get personalized help understanding challenging topics, practicing problem-solving, and keeping up with your mathematics syllabus.",
     details: "€25 per hour"
   },
   {
-    id: "skill-development",
+    id: "geography-support",
     icon: Target,
-    title: "Syllabus practice",
-    description: "Targeted practice that follows your syllabus, where I help you understand difficult concepts in simple, concise terms, utilizing modern, tangible examples.",
+    title: "Geography Tutoring",
+    description: "Geography remains available as a secondary subject, including exam preparation and guidance with your IA or Extended Essay.",
     details: "€25 per hour"
   }
 ];
@@ -37,7 +37,7 @@ export default function ServicesSection() {
     <section id="services" className="min-h-screen flex items-center py-20" style={{ backgroundColor: '#e0e0db' }}>
       <div className="max-w-7xl mx-auto px-6 w-full">
         <h2 className="text-3xl md:text-4xl lg:text-5xl text-center mb-10 md:mb-16" style={{ color: '#253551' }}>
-          My Services
+          Mathematics Tutoring, with Geography Also Available
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">

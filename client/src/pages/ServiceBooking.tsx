@@ -20,9 +20,12 @@ import {
 } from "@/components/ui/form";
 
 const SERVICES = {
-  "exam-preparation": "Exam Preparation",
-  "one-on-one": "One-on-One Tutoring",
-  "skill-development": "Skill Development",
+  "math-exam-preparation": "IB Math Exam Preparation",
+  "math-one-on-one": "One-on-One IB Math Support",
+  "geography-support": "Geography Tutoring",
+  "exam-preparation": "Geography Exam Preparation",
+  "one-on-one": "Geography IA/EE Support",
+  "skill-development": "Geography Syllabus Practice",
 };
 
 type FormData = z.infer<typeof insertContactSubmissionSchema>;
@@ -33,8 +36,8 @@ export default function ServiceBooking() {
   
   // Get service from URL query parameter
   const params = new URLSearchParams(window.location.search);
-  const serviceParam = params.get("service") || "exam-preparation";
-  const serviceName = SERVICES[serviceParam as keyof typeof SERVICES] || SERVICES["exam-preparation"];
+  const serviceParam = params.get("service") || "math-exam-preparation";
+  const serviceName = SERVICES[serviceParam as keyof typeof SERVICES] || SERVICES["math-exam-preparation"];
 
   const form = useForm<FormData>({
     resolver: zodResolver(insertContactSubmissionSchema),

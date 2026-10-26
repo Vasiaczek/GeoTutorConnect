@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" fill="none">
+  <defs>
+    <linearGradient id="surface" x1="220" y1="360" x2="520" y2="260" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#20B9A5"/>
+      <stop offset=".52" stop-color="#428DDA"/>
+      <stop offset="1" stop-color="#9B69D2"/>
+    </linearGradient>
+    <linearGradient id="surfaceLight" x1="330" y1="190" x2="440" y2="385" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F3D6FF" stop-opacity=".5"/>
+      <stop offset=".52" stop-color="#D9F8F1" stop-opacity=".04"/>
+      <stop offset="1" stop-color="#072E55" stop-opacity=".19"/>
+    </linearGradient>
+    <linearGradient id="background" x1="78" y1="42" x2="650" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FCFCFA"/>
+      <stop offset="1" stop-color="#E9EDF2"/>
+    </linearGradient>
+    <filter id="shadow" x="156" y="127" width="478" height="336" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="9"/>
+      <feOffset dy="11"/>
+      <feComponentTransfer>
+        <feFuncA slope=".17" type="linear"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="surfaceClip">
+      <path d="M195 357C249 334 309 283 373 230C408 201 440 190 466 208C499 230 524 261 565 289C525 317 465 346 407 376C346 407 312 421 279 407C244 393 218 373 195 357Z"/>
+    </clipPath>
+  </defs>
+
+  <rect width="720" height="560" rx="32" fill="#253551"/>
+  <rect x="24" y="24" width="672" height="512" rx="25" fill="url(#background)"/>
+
+  <g stroke="#253551" stroke-opacity=".1" stroke-width="1.5">
+    <path d="M194 412 293 467M238 412 337 467M282 412 381 467M326 412 425 467M370 412 469 467M414 412 513 467M458 412 557 467"/>
+    <path d="M194 412H546M216 424H568M238 436H590M260 448H612"/>
+  </g>
+
+  <path d="M207 390C299 375 396 346 493 311C524 328 553 346 580 362C481 399 379 427 278 446C253 429 229 409 207 390Z" fill="#253551" fill-opacity=".07"/>
+
+  <g filter="url(#shadow)">
+    <path d="M195 357C249 334 309 283 373 230C408 201 440 190 466 208C499 230 524 261 565 289C525 317 465 346 407 376C346 407 312 421 279 407C244 393 218 373 195 357Z" fill="url(#surface)"/>
+    <g clip-path="url(#surfaceClip)" stroke="#F5FCFF" stroke-opacity=".54" stroke-width="1.6">
+      <path d="M189 367C282 338 372 304 477 268C509 257 541 257 574 273"/>
+      <path d="M186 382C278 353 371 320 477 286C513 274 544 273 577 287"/>
+      <path d="M190 397C282 369 374 337 480 304C518 292 550 290 581 301"/>
+      <path d="M199 411C289 385 382 354 487 324C524 312 554 308 585 317"/>
+      <path d="M211 426C300 401 394 371 496 343C532 332 561 326 589 333"/>
+      <path d="M215 375C250 361 283 348 318 332C351 316 387 284 412 248C430 223 443 204 455 194"/>
+      <path d="M245 396C277 381 309 365 342 345C374 324 408 291 433 257C451 233 467 214 479 204"/>
+      <path d="M278 412C306 395 335 376 365 354C397 331 429 301 454 271C474 247 490 229 503 218"/>
+      <path d="M314 417C338 400 363 381 390 360C421 338 452 311 477 285C497 264 513 247 528 237"/>
+      <path d="M350 403C371 390 393 375 417 358C447 338 478 316 505 294C524 278 543 264 558 256"/>
+    </g>
+    <path d="M195 357C249 334 309 283 373 230C408 201 440 190 466 208C499 230 524 261 565 289C525 317 465 346 407 376C346 407 312 421 279 407C244 393 218 373 195 357Z" fill="url(#surfaceLight)"/>
+    <path d="M195 357C249 334 309 283 373 230C408 201 440 190 466 208C499 230 524 261 565 289C525 317 465 346 407 376C346 407 312 421 279 407C244 393 218 373 195 357Z" stroke="#FFFFFF" stroke-opacity=".65" stroke-width="2"/>
+  </g>
+
+  <g stroke="#253551" stroke-opacity=".62" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M166 412H572"/>
+    <path d="M166 412 293 483"/>
+    <path d="M166 412V139"/>
+  </g>
+  <g stroke="#253551" stroke-opacity=".28" stroke-width="1.5" stroke-dasharray="5 7">
+    <path d="M279 407V446"/>
+    <path d="M279 446 407 376"/>
+    <path d="M407 376V412"/>
+  </g>
+  <circle cx="166" cy="412" r="4" fill="#253551"/>
+
+  <g fill="#253551" font-family="Georgia,serif" font-style="italic">
+    <text x="586" y="419" font-size="20">x</text>
+    <text x="301" y="493" font-size="20">y</text>
+    <text x="153" y="126" font-size="20">z</text>
+  </g>
+  <text x="48" y="86" fill="#253551" fill-opacity=".58" font-family="Georgia,serif" font-size="21">z = f(x, y)</text>
+  <text x="49" y="113" fill="#253551" fill-opacity=".38" font-family="Georgia,serif" font-size="15">surface integral</text>
+</svg>

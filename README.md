@@ -1,6 +1,6 @@
 # GeoTutorConnect / Wasiak Tutoring
 
-This is the codebase behind **Wasiak Tutoring**, a personal tutoring website for Stanisław Wasiak, an IB graduate who scored 7/7 in Geography HL and now helps other IB students do the same.
+This is the codebase behind **Wasiak Tutoring**, a personal tutoring website for Stanisław Wasiak. The site focuses on one-to-one IB Mathematics AA SL tutoring, with Geography tutoring also available.
 
 The site is built to do one thing well: turn a curious student into a booked session. Visitors can read about the services, see what past students have said, learn about Stanisław's background, and send a booking request, all from a single scrollable page.
 
@@ -106,9 +106,11 @@ Three services, all at €25/hour:
 
 | ID | Name |
 |----|------|
-| `exam-preparation` | Exam Preparation |
-| `one-on-one` | Help Writing the IA/EE |
-| `skill-development` | Syllabus Practice |
+| `math-exam-preparation` | IB Math Exam Preparation |
+| `math-one-on-one` | One-on-One IB Math Support |
+| `geography-support` | Geography Tutoring |
+
+Older Geography booking links (`exam-preparation`, `one-on-one`, and `skill-development`) remain supported.
 
 ---
 

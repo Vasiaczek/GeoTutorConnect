@@ -3,9 +3,9 @@ import { Award, MapPin, Users } from "lucide-react";
 import aboutImage from "@assets/generated_images/geography_tutor_professional_headshot.jpg";
 
 const credentials = [
-  { icon: Award, text: "7/7 in Geography HL" },
-  { icon: Users, text: "Prepared 15 students for final exams" },
-  { icon: MapPin, text: "Specialized in Urban Geography" }
+  { icon: Award, text: "7/7 in Mathematics" },
+  { icon: Users, text: "Tutored students across 5 countries" },
+  { icon: MapPin, text: "7/7 in Geography HL" }
 ];
 
 export default function AboutSection() {
@@ -14,7 +14,7 @@ export default function AboutSection() {
       <div className="max-w-4xl mx-auto px-6 w-full">
         <div className="text-center mb-8 md:mb-12">
           <Avatar className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-6">
-            <AvatarImage src={aboutImage} alt="Professional geography tutor" className="object-cover object-top" />
+            <AvatarImage src={aboutImage} alt="Stanisław Wasiak" className="object-cover object-top" />
             <AvatarFallback>GT</AvatarFallback>
           </Avatar>
           <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4" style={{ color: '#253551' }}>About Me</h2>
@@ -22,13 +22,13 @@ export default function AboutSection() {
 
         <div className="space-y-4 md:space-y-6 text-base md:text-lg leading-relaxed mb-8" style={{ color: '#253551' }}>
           <p>
-            My name is Stanisław Wasiak and I'm a third year BSc Spatial Planning and Design and first year Applied Mathematics student at the University of Groningen. I graduated the International Baccalaureate Programme at the Stefan Batory High School in Warsaw, Poland, with a score of 37/45. Of those points, I graduated with 7/7 in both Higher Level Geography and Standard Level AA Mathematics.
+          My name is Stanisław Wasiak, and I study Applied Mathematics and Spatial Planning and Design at the University of Groningen. I graduated from the International Baccalaureate Programme at Stefan Batory High School in Warsaw with a score of 37/45, including 7/7 in Mathematics and 7/7 in Geography.
           </p>
           <p>
-            I began tutoring in 2024, when I partnered up with a Dutch company offering tutoring services to students in the Netherlands. I decided to begin tutoring on my own when both my students and I realized that their needs are better met when I'm available to them at all times - something that previously wasn't possible. Since then, I've guided more than a dozen students through their finals, writing IAs, and Extended Essays.
+          My main tutoring focus is mathematics: helping students build understanding, approach problems with confidence, and prepare for exams. I also continue to offer Geography tutoring, drawing on my experience supporting students with exams, IAs, and Extended Essays.
           </p>
           <p>
-            I helped students from The Netherlands, Spain, Sweden, Poland, and Switzerland in achieving their desired grades, with an average final score of 6.6/7. 
+          I began tutoring in 2024 and have supported students in the Netherlands, Spain, Sweden, Poland, and Switzerland. My students have achieved an average final score of 6.6/7.
           </p>
         </div>
 
